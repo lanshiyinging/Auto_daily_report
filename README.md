@@ -33,6 +33,12 @@ email="youremail"           # email to receive result
 
 Ps. 可能需要指定python路径
 
+PPs. 如果要添加定时任务，要在脚本里（email 后面）添加一句
+
+```
+cd yourpath/Auto_daily_report
+```
+
 ### Usage
 
 run once
