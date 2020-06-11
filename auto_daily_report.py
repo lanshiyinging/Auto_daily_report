@@ -55,6 +55,8 @@ try:
         print("Success")
         driver.quit()
         sys.exit(0)
+    else:
+        sys.exit(1)
     #with open('source.txt', 'w') as f:
     #    f.write(pagesource)
 
