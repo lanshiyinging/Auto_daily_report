@@ -31,7 +31,7 @@ password="yourpassword"     # password
 email="youremail"           # email to receive result
 ```
 
-
+Ps. 可能需要指定python路径
 
 ### Usage
 
@@ -50,7 +50,7 @@ crontab -e
 添加定时任务
 
 ```
-30 7 * * * sh yourpath/Auto_daily_report/autoReport.sh
+0 7 * * * sh yourpath/Auto_daily_report/autoReport.sh >> yourlogfile 2>&1 &
 ```
 
 重启cron
