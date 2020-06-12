@@ -6,6 +6,7 @@ email="youremail"
 
 python auto_daily_report.py $usrname $password
 result=$?
+echo ${result}
 i=0
 until  [ $result -eq 0 -o $i -gt 5 ];
 do
@@ -15,7 +16,7 @@ do
     python auto_daily_report.py $usrname $password
     result=$?
 
-    echo ${i}
+    echo ${result}
 
     i=`expr $i + 1`
 

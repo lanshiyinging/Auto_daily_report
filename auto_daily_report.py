@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
 import sys
+import os
 
 '''
 chrome_options = Options()
@@ -54,12 +55,12 @@ try:
     if "修改了表单" in pagesource:
         print("Success")
         driver.quit()
-        sys.exit(0)
+        os._exit(0)
     else:
-        sys.exit(1)
+        os._exit(1)
     #with open('source.txt', 'w') as f:
     #    f.write(pagesource)
 
 except:
-    sys.exit(1)
+    os._exit(1)
 

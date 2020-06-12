@@ -1,6 +1,15 @@
 # Auto_daily_report
 Auto_daily_report for xmu health system
 
+### Introduction
+
+- 支持在“承诺xxxx”的下拉框选择“是” ☑️
+- 支持保存表单  ☑️
+- 支持判断是否打卡成功   [待测试]
+  - 打卡失败，间隔1h后重新打卡
+    - 若打卡失败5次，发邮件通知“打卡失败”
+  - 打卡成功，发邮件通知 “打卡成功”
+
 ### Requirement
 
 - selenium
@@ -67,3 +76,25 @@ sudo service cron restart
 
 
 
+### Updata
+
+2020-6-11 修复脚本判断打卡失败情况的bug
+
+```
+until 的判断条件改成“或”的关系 （-a --> -o）
+```
+
+
+
+2020-6-12 修复python脚本打卡成功exit返回值bug
+
+```
+sys.exit(0)   #原本使用sys.exit(), 会被try...except捕捉到, 导致返回值一直是1
+os._exit(0)   #os._exit()会直接退出，成功的话返回值是0，否则为1
+```
+
+
+
+### To do
+
+- 判断打卡状态发邮件的功能待测试
