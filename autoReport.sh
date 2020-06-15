@@ -25,7 +25,7 @@ done
 #mail -s "Daily report success" youremail
 
 if [ $result -eq 0 ]; then
-    mail -s "Daily report success" email
+    mail -s "Daily report success" $email
 else
-    mail -s "Daily report failed" email
+    mail -s "Daily report failed" $email
 fi

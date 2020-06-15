@@ -31,7 +31,7 @@ try:
     login = driver.find_element_by_xpath("//button[@type='submit']").click()
     time.sleep(10)
 
-    driver.get_screenshot_as_file("screen.png")
+    #driver.get_screenshot_as_file("screen.png")
 
     daily_report_app = driver.find_element_by_xpath('//*[@id="mainPage-page"]/div[1]/div[3]/div[2]/div[2]/div[3]/div/div[1]/div[2]').click()
     time.sleep(10)
@@ -50,6 +50,8 @@ try:
     time.sleep(1)
     confirm = driver.switch_to.alert
     confirm.accept()
+    time.sleep(3)
+    driver.refresh()
     time.sleep(5)
     pagesource = driver.page_source
     if "修改了表单" in pagesource:
