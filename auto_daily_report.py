@@ -40,7 +40,14 @@ try:
     driver.switch_to.window(handles[-1])
 
     my_form = driver.find_element_by_xpath('//div[@title="我的表单"]').click()
-    time.sleep(1)
+    time.sleep(3)
+
+    # check if submit
+    pagesource = driver.page_source
+    if "修改了表单" in pagesource:
+        print("Success")
+        driver.quit()
+        os._exit(0)
 
     select = driver.find_element_by_xpath('//*[@id="select_1582538939790"]/div/div').click()
     yes = driver.find_element_by_xpath("/html/body/div[8]/ul/div/div[3]/li/label").click()
